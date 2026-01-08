@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar | Panel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MiTienda</div>
+        <button class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-menu" id="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="galeria.html">Administrar</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-wrapper">
+        <div id="login-container" class="login-card">
+            <h2>Acceso Privado</h2>
+            <div class="password-box">
+                <input type="password" id="pass-input" placeholder="Introduce la clave">
+                <span id="togglePassword">👁️</span>
+            </div>
+            <button onclick="validarAcceso()" class="btn-celeste">Entrar</button>
+        </div>
+
+        <div id="admin-content" style="display: none;" class="admin-panel">
+            <div class="admin-header">
+                <h1>Panel de Control</h1>
+                <button onclick="logout()" class="btn-logout">Cerrar Sesión</button>
+            </div>
+
+            <section class="admin-section">
+                <h3>1. Destacados (Carrusel)</h3>
+                <div id="drop-area-dest" class="upload-zone-celeste">
+                    <div class="upload-icon">☁️</div>
+                    <p>Arrastre fotos aquí para el carrusel</p>
+                    <input type="file" id="fileDest" multiple accept="image/*" style="display:none;" onchange="subirDestacados(this.files)">
+                    <label class="btn-celeste" for="fileDest">Elegir Fotos</label>
+                </div>
+                <div id="admin-destacados" class="gallery-grid"></div>
+            </section>
+
+            <hr class="divider">
+
+            <section class="admin-section">
+                <h3>2. Catálogo (Lista Amazon)</h3>
+                <div class="form-container">
+                    <div id="drop-area-cat" class="upload-zone-celeste">
+                        <div class="upload-icon">🖼️</div>
+                        <p id="cat-status">Arrastre aquí la foto del producto</p>
+                        <input type="file" id="fileCat" accept="image/*" style="display:none;" onchange="procesarFotoCatalogo(this.files)">
+                        <label class="btn-celeste" for="fileCat">Elegir Foto</label>
+                    </div>
+                    
+                    <div class="product-inputs">
+                        <input type="text" id="prod-desc" placeholder="Descripción del producto">
+                        <input type="text" id="prod-price" placeholder="Precio (ej: $99.00)">
+                        <div class="stock-options">
+                            <label><input type="radio" name="stock" value="En Stock" checked> Stock</label>
+                            <label><input type="radio" name="stock" value="Agotado"> Agotado</label>
+                        </div>
+                        <button onclick="guardarCatalogo()" class="btn-save">Publicar Producto</button>
+                    </div>
+                </div>
+                <div id="admin-catalogo" class="gallery-grid"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda | Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MiTienda</div>
+        <button class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul class="nav-menu" id="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="galeria.html">Administrar</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="carousel-container">
+            <div id="index-gallery" class="carousel-track"></div>
+            <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+            <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+        </div>
+
+        <h2 class="section-title">Catálogo Completo</h2>
+        <div id="product-list" class="product-vertical-list"></div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
